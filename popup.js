@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const links = document.querySelectorAll('.urlLink');
 links.forEach(function(link) {
     link.addEventListener('click', function(e) {
-        e.preventDefault(); // Отменяем переход внутри расширения
+        e.preventDefault();
         
         const url = this.getAttribute('data-url');
         
@@ -109,7 +109,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 	const statusDiv = document.getElementById("status");
   
 	if (!tabs || tabs.length === 0 || !tabs[0].url) {
-		statusDiv.innerText = "Не удалось определить адрес";
+		statusDiv.innerText = chrome.i18n.getMessage("domainError");
 		return;
 	}
 
@@ -137,6 +137,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 		}
 
 		let suspectTarget = null;
+		let suspectDomain = null;
 		const currentBrand = getBrandName(detectedMainDomain); 
 
 		for (const cleanDomain of Object.keys(whitelist)) {
@@ -144,6 +145,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
 			if (fullHostname.includes(targetBrand)) { 
 				suspectTarget = whitelist[cleanDomain]; 
+				suspectDomain = cleanDomain;
 				break; 
 			}
 		  
@@ -151,13 +153,14 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 		  
 			if (distance > 0 && distance <= 2) { 
 				suspectTarget = whitelist[cleanDomain]; 
+				suspectDomain = cleanDomain;
 				break; 
 			}
 		}
 
 		if (suspectTarget) {
 			statusDiv.className = "status-box danger";
-			statusDiv.innerText = chrome.i18n.getMessage("pageType_alarm") + `\n ${suspectTarget} – ${fullHostname}`;
+			statusDiv.innerText = chrome.i18n.getMessage("pageType_alarm") + `\n ${suspectTarget} – ${suspectDomain}`;
 			chrome.action.setIcon({ tabId: currentTab.id, path: "img/icon_red.png" });
 		}
 		else {

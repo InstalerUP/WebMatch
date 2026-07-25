@@ -4,13 +4,17 @@
         "description": "Extension name"
     },
     "extDescription": {
-        "message": "Checks if the current website's domain is in your trusted list.",
+        "message": "Checks if the current website's domain is in your trusted list",
         "description": "Extension description"
     },
     "loadingBox": {
         "message": "Loading...",
         "description": "Placeholder text while the script is loading"
     },
+    "domainError": {
+		"message": "Unable to determine the address",
+		"description": "Error text if the address failed to load"
+	},
     "addDomainCurrent": {
         "message": "⭐ Current",
         "description": "Text for the button to add the current site to the trusted list"
