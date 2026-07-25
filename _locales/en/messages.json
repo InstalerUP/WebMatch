@@ -1,0 +1,118 @@
+{
+    "extName": {
+        "message": "WebMatch - Domain Checker",
+        "description": "Extension name"
+    },
+    "extDescription": {
+        "message": "Checks if the current website's domain is in your trusted list.",
+        "description": "Extension description"
+    },
+    "loadingBox": {
+        "message": "Loading...",
+        "description": "Placeholder text while the script is loading"
+    },
+    "addDomainCurrent": {
+        "message": "⭐ Current",
+        "description": "Text for the button to add the current site to the trusted list"
+    },
+    "addDomainManual": {
+        "message": "📝 Manual",
+        "description": "Text for the button to manually add a site to the trusted list"
+    },
+    "addDomainCurrent_title": {
+        "message": "Adds the current site to the trusted list",
+        "description": "Description for the button to add the current site to the trusted list"
+    },
+    "pageType_system": {
+        "message": "This is a browser service page",
+        "description": "Indication of the current page type: System"
+    },
+    "pageType_valid": {
+        "message": "✔ Trusted site",
+        "description": "Indication of the current page type: Original/Trusted"
+    },
+    "pageType_unknown": {
+        "message": "❔ Untrusted site",
+        "description": "Indication of the current page type: Unknown"
+    },
+    "pageType_alarm": {
+        "message": "⚠ WARNING!\nThe site looks like a fake",
+        "description": "Indication of the current page type: Suspicious/Phishing"
+    },
+    "head1Add": {
+        "message": "Add site to list",
+        "description": "Header for the block to add a site to the trusted list"
+    },
+    "head1Control": {
+        "message": "Manage site list",
+        "description": "Header for the block to manage the trusted site list"
+    },
+    "head2AddCurrent": {
+        "message": "Add current site",
+        "description": "Subheader for the form to add the current site to the trusted list"
+    },
+    "formAddCurrentName": {
+        "message": "Name: ",
+        "description": "Text for the row indicating the site name"
+    },
+    "formAddCurrentName_inputPlaceholder": {
+        "message": "e.g.: My Bank",
+        "description": "Placeholder showing the format for the site name"
+    },
+    "formAddCurrentDomain": {
+        "message": "Address: ",
+        "description": "Text for the row indicating the site address"
+    },
+    "formAddCurrentDomain_inputPlaceholder": {
+        "message": "e.g.: domain.com",
+        "description": "Placeholder showing the format for the site address"
+    },
+    "formAddCurrentDomain_error": {
+        "message": "Please enter the site name!",
+        "description": "Error notification text when the name input field is empty"
+    },
+    "formAddDomain_success": {
+        "message": "Successfully added to the database!",
+        "description": "Success notification text for adding the current site to the trusted list"
+    },
+    "formAddManualDomain_error": {
+        "message": "Please fill in both fields!",
+        "description": "Error notification text when at least one field is empty during manual addition"
+    },
+    "head2AddManual": {
+        "message": "Add site manually",
+        "description": "Subheader for the form to manually add a site to the trusted list"
+    },
+    "formAddDomainButton": {
+        "message": "✔️ Save",
+        "description": "Text for the button to save the specified site data"
+    },
+    "exportSiteListButton": {
+        "message": "📥 Download list",
+        "description": "Text for the button to save the current trusted site list to the computer"
+    },
+    "importSiteListButton": {
+        "message": "📤 Replace list",
+        "description": "Text for the button to import (replace) the trusted site list from the computer"
+    },
+    "importSiteList_success": {
+        "message": "List replaced with a new one!",
+        "description": "Success notification text for importing (replacing) the trusted site list from the computer"
+    },
+    "importSiteList_errorFormat": {
+        "message": "Invalid file format!",
+        "description": "Error text for invalid file format when importing (replacing) the trusted site list"
+    },
+    "importSiteList_errorJson": {
+        "message": "Error reading JSON file!",
+        "description": "Error text for reading the JSON file when importing (replacing) the trusted site list"
+    },
+    "info_forFolks": {
+        "message": "Made for folks 💚",
+        "description": "Developer's comment in the info block"
+    },
+    "placeHolder": {
+        "message": "",
+        "description": ""
+    }
+}

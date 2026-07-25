@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		body { width: 260px; margin: 0; padding: 12px; font-family: system-ui, sans-serif; background: #fafafa; }
+		p { margin: 0px; padding 0px; font-size: 12px; }
+		h3, h4 { font-size: 12px; margin: 0px; padding-bottom: 6px; }
+		h4 { font-weight: normal; }
+		button { flex: 1; padding: 4px; border: 1px solid #d0d7de; border-radius: 4px; background: white; cursor: pointer; font-size: 12px; }
+		button:hover { background: #f3f4f6; }
+
+		.status-box { padding: 10px; border-radius: 6px; font-weight: bold; font-size: 14px; text-align: center; margin-bottom: 10px; }
+		.safe { background-color: #e6ffed; color: #1a7f37; border: 1px solid #2da44e; }
+		.danger { background-color: #ffebe9; color: #cf222e; border: 1px solid #f85149; }
+		.unknown { background-color: #f6f8fa; color: #57606a; border: 1px solid #d0d7de; }
+		
+		.block-separator { border: none; border-top: 1px solid #ddd; margin: 10px auto; width: 96%; }
+		.menu-block { margin-top: 6px; margin-bottom: 6px; margin-left: 0px; margin-right: 0px; }
+		.table-form { border-collapse: collapse; width: 100%; height: auto; }
+		.table-form tr { padding: 0px; margin: 0px; }
+		.table-form td { padding: 0px; margin: 0px; vertical-align: middle; }
+		.table-form td:first-child { white-space: nowrap; padding-right: 6px; }
+		.table-form td:last-child { width: 100%; }
+		.form-group { display: none; flex-direction: column; gap: 5px; background: #fff; padding: 8px; border: 1px solid #d0d7de; border-radius: 4px; margin-bottom: 0px; }
+		.form-group input { width: 100%; box-sizing: border-box; padding: 5px; font-size: 12px; border: 1px solid #d0d7de; border-radius: 4px; margin: 2px; }
+		.saveSiteBtn { background: #2da44e; color: white; border: none; }
+		.saveSiteBtn:hover { background: #1F6B32; }
+		.actions { display: flex; justify-content: space-between; gap: 5px; margin-bottom: 2px; }
+		.notif-box { display: none; padding: 8px; font-size: 12px; border-radius: 4px; text-align: center; margin-bottom: 10px; font-weight: 500; }
+		.notif-success { background: #e6ffed; color: #000000; border: 1px solid #2da44e; }
+		.notif-error { background: #FFF7D6; color: #000000; border: 1px solid #F7D74A; }
+		.file-ops { display: flex; gap: 5px; font-size: 12px;}
+		.file-ops button { padding: 3px; font-size: 12px; }
+		.infoIco { width: auto; height: 26px; opacity: 0.75; }
+		.infoIco:hover { opacity: 1.0; }
+		.urlLink { cursor: pointer; display: inline-block; }
+		
+		#fileInput { display: none; }
+	</style>
+</head>
+<body>
+
+	<!-- Status box -->
+	<div id="status" class="status-box unknown" data-i18n="loadingBox">
+		Loading...
+	</div>
+	
+	<!-- Notification box -->
+	<div id="notification" class="notif-box">
+	</div>
+	
+	<!-- Actions block -->
+	<hr class="block-separator">
+	<div class="menu-block">
+		<h3 data-i18n="head1Add">Add site to list</h3>
+		
+		<!-- Buttons -->
+		<div class="actions">
+			<button id="addCurrentBtn" data-i18n="addDomainCurrent" >Current</button>
+			<button id="toggleFormBtn" data-i18n="addDomainManual">Manual</button>
+		</div>
+	
+		<!-- Current add form -->
+		<div id="currentForm" class="form-group">
+			<h4 data-i18n="head2AddCurrent">Add current site</h4>
+			<table class="table-form">
+				<tr>
+					<td><p data-i18n="formAddCurrentName">Name: </p></td>
+					<td><input type="text" id="inputCurrentName" data-i18n-placeholder="formAddCurrentName_inputPlaceholder"></td>
+				</tr>
+				<tr>
+					<td><p data-i18n="formAddCurrentDomain">Domain: </p></td>
+					<td><input type="text" id="inputCurrentDomain" value="" disabled></td>
+				</tr>			
+			</table>
+			<button id="saveCurrentBtn" class="saveSiteBtn"data-i18n="formAddDomainButton">Save</button>
+		</div>
+
+		<!-- Manual add form -->
+		<div id="manualForm" class="form-group">
+			<h4 data-i18n="head2AddManual">Add site manual</h4>
+			<table class="table-form">
+				<tr>
+					<td><p data-i18n="formAddCurrentName">Name: </p></td>
+					<td><input type="text" id="inputManualName" data-i18n-placeholder="formAddCurrentName_inputPlaceholder"></td>
+				</tr>
+				<tr>
+					<td><p data-i18n="formAddCurrentDomain">Domain: </p></td>
+					<td><input type="text" id="inputManualDomain" data-i18n-placeholder="formAddCurrentDomain_inputPlaceholder"></td>
+				</tr>			
+			</table>
+			<button id="saveManualBtn" class="saveSiteBtn"data-i18n="formAddDomainButton">Save</button>
+		</div>
+	</div>
+	
+	<!-- Domains list control block -->
+	<hr class="block-separator">
+	<h3 data-i18n="head1Control">Control site list</h3>
+	<div class="file-ops">
+		<button id="exportBtn" data-i18n="exportSiteListButton">Download list</button>
+		<button id="importBtn" data-i18n="importSiteListButton">Install list</button>
+		<input type="file" id="fileInput" accept=".json">
+	</div>
+
+	<!-- Info block -->
+	<hr class="block-separator">
+	<table style="width: 100%">
+		<tr>
+			<td>
+				<p><b>WebMatch</b></p>
+				<p data-i18n="info_forFolks">Made for folks</p>
+			</td>
+			<td style="text-align: right;">
+				<a class="urlLink" data-url="https://github.com"><img src="img/github_logo.png" class="infoIco"></a>
+			</td>
+		</tr>
+	</table>
+	
+	<!-- Main script -->
+	<script src="popup.js"></script>
+</body>
+</html>
