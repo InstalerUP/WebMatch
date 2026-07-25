@@ -5,7 +5,11 @@
 
 
 ## Скриншоты
-
+<div align="middle">
+   <img width="626" height="auto" align="top" alt="Доверенный сайт" src="https://github.com/user-attachments/assets/71daf9ff-4f48-4117-b909-b204f9353712" /><br><br>
+   <img width="300" height="auto" align="top" alt="Фишинговый сайт" src="https://github.com/user-attachments/assets/092cbc65-5dcd-42a5-bd7c-bd7b900e2c10" />&nbsp&nbsp&nbsp&nbsp&nbsp
+   <img width="300" height="auto" align="top" alt="Добавление сайта в список" src="https://github.com/user-attachments/assets/6d3cde24-d554-4467-9141-2503ab3c724f" />
+</div>
 
 
 ## Основные возможности
@@ -22,12 +26,14 @@
 ## Установка расширения вручную
 
 1. Скачать архив с GitHub.
-   ![Download](md-files/install1.png)
-2. Разорхивировать папку `WebMatch-main` в любое место на компьютере.
-3. В браузере (на базе Chromium) перейти в **Управление расшерениями** (или по адресу `chrome://extensions/`).
-4. Включить **Режим разработчика** в правом верхнем углу.
-5. Нажать **Загрузить распакованное расширение**.
-6. Выбрать папку `WebMatch-main`.
+
+   <img width="600" height="auto" alt="Как скачать архив" src="https://github.com/user-attachments/assets/33f37226-3a1a-4a1c-95d2-36dbb8e9dc3d" />
+
+3. Разорхивировать папку `WebMatch-main` в любое место на компьютере.
+4. В браузере (на базе Chromium) перейти в **Управление расшерениями** (или по адресу `chrome://extensions/`).
+5. Включить **Режим разработчика** в правом верхнем углу.
+6. Нажать **Загрузить распакованное расширение**.
+7. Выбрать папку `WebMatch-main`.
 
 
 ## Настройка расшерения
