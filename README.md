@@ -1,67 +1,73 @@
+### Language:</br>
+🇺🇸 - [Read in English](README.md)</br>
+🇷🇺 - [Читать на русском языке](README.ru.md)
+
+---
+
 ![WebMatch Logo](img/icon128.png)
-# WebMatch – проверка доменов
+# WebMatch – Domain Checker
 
-**WebMatch** – это лёгкое и простое расширение для браузеров на основе Chromium для защиты от фишинга и проверки подлинности веб-сайтов. Расширение сверяет текущий домен открытой вкладки с вашим личным списком доверенных ресурсов и мгновенно информирует о статусе безопасности.
+**WebMatch** is a lightweight and simple Chromium-based browser extension designed for anti-phishing protection and website authentication. The extension checks the current domain of the active tab against your personal list of trusted resources and instantly informs you of its security status.
 
 
-## Скриншоты
+## Screenshots
 <div align="middle">
-   <img width="626" height="auto" align="top" alt="Доверенный сайт" src="https://github.com/user-attachments/assets/71daf9ff-4f48-4117-b909-b204f9353712" /><br><br>
-   <img width="300" height="auto" align="top" alt="Фишинговый сайт" src="https://github.com/user-attachments/assets/092cbc65-5dcd-42a5-bd7c-bd7b900e2c10" />&nbsp&nbsp&nbsp&nbsp&nbsp
-   <img width="300" height="auto" align="top" alt="Добавление сайта в список" src="https://github.com/user-attachments/assets/6d3cde24-d554-4467-9141-2503ab3c724f" />
+   <img width="626" height="auto" align="top" alt="Trusted Site" src="https://github.com/user-attachments/assets/71daf9ff-4f48-4117-b909-b204f9353712" /><br><br>
+   <img width="300" height="auto" align="top" alt="Phishing Site" src="https://github.com/user-attachments/assets/092cbc65-5dcd-42a5-bd7c-bd7b900e2c10" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <img width="300" height="auto" align="top" alt="Adding Site to List" src="https://github.com/user-attachments/assets/6d3cde24-d554-4467-9141-2503ab3c724f" />
 </div>
 
 
-## Основные возможности
+## Key Features
 
-* **Мгновенная проверка домена:** Автоматически определяет, находится ли открытый сайт в вашем доверенном списке.
-* **Предупреждение о фишинге:** Оповещает пользователя, если текущий сайт не входит в белый список или похож на подделку.
-* **Удобное добавление сайтов:** Добавляйте текущий сайт в один клик или вносите домены вручную.
-* **Импорт и экспорт базы:** Сохраняйте и загружайте Ваши доверенные списоки в формате `.json` для переноса данных или резервного копирования.
-* **Самостоятельность:** В расширении отсутствуют встроенные доверенные сайты.
-* **Мультиязычность:** Автоматическая активация Вашего языка приложения.
-* **Легковесность и приватность:** Работает локально в вашем браузере, данные не передаются на внешние серверы.
-
-
-## Установка расширения вручную
-
-1. Скачать архив с GitHub.
-
-   <img width="600" height="auto" alt="Как скачать архив" src="https://github.com/user-attachments/assets/33f37226-3a1a-4a1c-95d2-36dbb8e9dc3d" />
-
-3. Разорхивировать папку `WebMatch-main` в любое место на компьютере.
-4. В браузере (на базе Chromium) перейти в **Управление расшерениями** (или по адресу `chrome://extensions/`).
-5. Включить **Режим разработчика** в правом верхнем углу.
-6. Нажать **Загрузить распакованное расширение**.
-7. Выбрать папку `WebMatch-main`.
+* **Instant Domain Check:** Automatically detects whether the open website is in your trusted list.
+* **Phishing Warning:** Alerts the user if the current website is not on the whitelist or appears to be a spoof.
+* **Convenient Site Addition:** Add the current website with a single click or enter domains manually.
+* **Database Import & Export:** Save and load your trusted lists in `.json` format for data migration or backup.
+* **Self-Contained:** The extension includes no pre-installed trusted websites.
+* **Multilingual Support:** Automatically activates based on your application language.
+* **Lightweight & Private:** Operates locally within your browser; no data is sent to external servers.
 
 
-## Настройка расшерения
+## Manual Extension Installation
 
-### Добавление адреса сайта
+1. Download the archive from GitHub.
 
-**Автоматически:**
-1. Перейти на нужную страницу.
-2. Нажать на **Текущий**.
-3. Указать собственное имя для сайта.
-4. Нажать сохранить.
+   <img width="600" height="auto" alt="How to download the archive" src="https://github.com/user-attachments/assets/33f37226-3a1a-4a1c-95d2-36dbb8e9dc3d" />
 
-**Вручную:**
-1. Нажать на **Вручную**.
-2. Указать собственное имя для сайта и необходимый адрес.
-3. Нажать сохранить.
-
-### Загрузка и выгрузка адресов
-
-**Выгрузка Вашего списка сайтов:**
-1. Нажать **Скачать список**.
-2. Выбрать место сохранения файла.
-
-**Заменить список на новый** (*ВНИМАНИЕ:* загрузка перезапишет список полностью, а не добавит недостающие адреса!)
-1. Нажать **Заменить список**.
-2. Выбрать файл в формате `.json`.
+2. Unzip the `WebMatch-main` folder anywhere on your computer.
+3. In your Chromium-based browser, go to **Manage Extensions** (or open `chrome://extensions/`).
+4. Enable **Developer mode** in the top-right corner.
+5. Click **Load unpacked**.
+6. Select the `WebMatch-main` folder.
 
 
-## Лицензия
+## Extension Settings
 
-Проект распространяется под лицензией **MIT**. Подробности в файле [LICENSE](LICENSE).
+### Adding a Website Address
+
+**Automatically:**
+1. Navigate to the desired page.
+2. Click **Current**.
+3. Specify a custom name for the website.
+4. Click **Save**.
+
+**Manually:**
+1. Click **Manual**.
+2. Specify a custom name for the website and the required address.
+3. Click **Save**.
+
+### Importing and Exporting Addresses
+
+**Exporting your list of sites:**
+1. Click **Download list**.
+2. Select a location to save the file.
+
+**Replacing the list with a new one** (*ATTENTION:* Loading will completely overwrite the existing list, rather than merging missing addresses!)
+1. Click **Replace list**.
+2. Select a file in `.json` format.
+
+
+## License
+
+This project is distributed under the **MIT** License. For details, see the [LICENSE](LICENSE) file.
