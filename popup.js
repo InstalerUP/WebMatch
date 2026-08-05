@@ -80,6 +80,16 @@ function getLevenshteinDistance(a, b) {
 	return matrix[lenB][lenA];
 }
 
+function getSimilarityPercentage(a, b) {
+	const strA = String(a || "").trim();
+	const strB = String(b || "").trim();
+	if (!strA || !strB) return 0;
+	const maxLen = Math.max(strA.length, strB.length);
+	if (maxLen === 0) return 100;
+	const distance = getLevenshteinDistance(strA, strB);
+	return (1 - distance / maxLen) * 100;
+}
+
 function getMainDomain(hostname) {
 	const parts = hostname.replace(/^www\./, "").split('.');
 	if (parts.length > 2) {
@@ -143,15 +153,15 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 		for (const cleanDomain of Object.keys(whitelist)) {
 			const targetBrand = getBrandName(cleanDomain); 
 
-			if (fullHostname.includes(targetBrand)) { 
+			if (targetBrand.length >= 3 && fullHostname.includes(targetBrand)) { 
 				suspectTarget = whitelist[cleanDomain]; 
 				suspectDomain = cleanDomain;
 				break; 
 			}
 		  
-			const distance = getLevenshteinDistance(targetBrand, currentBrand);
+			const similarity = getSimilarityPercentage(targetBrand, currentBrand);
 		  
-			if (distance > 0 && distance <= 2) { 
+			if (similarity >= 80 && similarity < 100) { 
 				suspectTarget = whitelist[cleanDomain]; 
 				suspectDomain = cleanDomain;
 				break; 

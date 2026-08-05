@@ -27,6 +27,16 @@ function getLevenshteinDistance(a, b) {
   return matrix[lenB][lenA];
 }
 
+function getSimilarityPercentage(a, b) {
+  const strA = String(a || "").trim();
+  const strB = String(b || "").trim();
+  if (!strA || !strB) return 0;
+  const maxLen = Math.max(strA.length, strB.length);
+  if (maxLen === 0) return 100;
+  const distance = getLevenshteinDistance(strA, strB);
+  return (1 - distance / maxLen) * 100;
+}
+
 function getMainDomain(hostname) {
   const parts = hostname.replace(/^www\./, "").split('.');
   if (parts.length > 2) {
@@ -67,13 +77,13 @@ function checkTabAndSetIcon(tabId, urlString) {
       for (const cleanDomain of Object.keys(whitelist)) {
         const targetBrand = getBrandName(cleanDomain); 
 
-        if (fullHostname.includes(targetBrand)) { 
+        if (targetBrand.length >= 3 && fullHostname.includes(targetBrand)) { 
           isPhishing = true; 
           break; 
         }
         
-        const distance = getLevenshteinDistance(targetBrand, currentBrand);
-        if (distance > 0 && distance <= 2) { 
+        const similarity = getSimilarityPercentage(targetBrand, currentBrand);
+        if (similarity >= 80 && similarity < 100) { 
           isPhishing = true; 
           break; 
         }
