@@ -266,3 +266,8 @@ document.getElementById('fileInput').onchange = (e) => {
 	};
 	reader.readAsText(files[0]);
 };
+
+// App version
+const manifestData = chrome.runtime.getManifest();
+const versionLabel = document.getElementById("footer-appName");
+versionLabel.innerHTML = `<b>WebMatch</b> | v` + manifestData.version;
