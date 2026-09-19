@@ -4,7 +4,10 @@
 
 ---
 
-![WebMatch Logo](img/icon128.png)
+<div align="middle">
+   <img width="128" height="auto" src="img/icon128.png" />
+</div>
+
 # WebMatch – Domain Checker
 
 **WebMatch** is a lightweight and simple Chromium-based browser extension designed for anti-phishing protection and website authentication. The extension checks the current domain of the active tab against your personal list of trusted resources and instantly informs you of its security status.
